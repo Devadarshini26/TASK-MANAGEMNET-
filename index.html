@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script> <!-- Lucide Icons -->
+</head>
+<body>
+
+    <div class="container">
+        <!-- Main Section at the Top -->
+        <div class="main">
+            <h1>Task Manager</h1>
+            <p>Organize your tasks efficiently with ease.</p>
+        </div>
+        
+        <!-- Task Input Sidebar -->
+        <div class="sidebar right">
+            <h2>Add Task</h2>
+            <form id="taskForm">
+                <input type="text" id="taskName" placeholder="Task Name" required>
+                <textarea id="taskDescription" placeholder="Task Description"></textarea>
+                <input type="date" id="taskDueDate">
+                <button type="submit"><i data-lucide="plus-circle"></i> Add Task</button>
+            </form>
+        </div>
+    
+        <!-- Task List Sidebar -->
+        <div class="sidebar left">
+            <h2>Task List</h2>
+            <div class="filter-buttons">
+                <button id="filterAll">All</button>
+                <button id="filterCompleted">Completed</button>
+                <button id="filterPending">Pending</button>
+            </div>
+            <input type="text" id="searchInput" placeholder="Search tasks...">
+            <ul id="tasks"></ul>
+        </div>
+    
+        
+    </div>
+    <div class="developer">
+        <span id="developerText">
+            <script>
+                // Typing Effect
+                const text = "Developed by Devadarshini Ashokkumar ❤️";
+                let index = 0;
+                function typeEffect() {
+                    if (index < text.length) {
+                        document.getElementById("developerText").innerHTML += text.charAt(index);
+                        index++;
+                        setTimeout(typeEffect, 100);
+                    }
+                }
+                window.onload = function () {
+                    setTimeout(typeEffect, 500);
+                };
+            </script>
+        </span>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons(); // Load Lucide Icons
+    </script>
+</body>
+</html>
